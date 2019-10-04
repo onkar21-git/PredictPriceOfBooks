@@ -61,5 +61,11 @@ levels(Book_Details_Test$Genre)
 
 levels(Book_Details_Test$Cust_Edition)
 
+sum(is.na(Book_Details_Test$))
+na.omit(Book_Details_Test$Cust_Ratings)
 
-nn = predict(model,Book_Details_Test[,-1])
+Book_Details_Test = subset(Book_Details_Test,is.na(Book_Details_Test$Cust_Ratings)==FALSE)
+Book_Details_Test$Price = 0
+
+nn = predict(model, Book_Details_Test[,-1])
+
